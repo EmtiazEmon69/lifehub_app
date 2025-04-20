@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container text-center py-4">
+    <h2 class="mb-2">Welcome, <span class="text-primary">{{ user_email }}</span></h2>
+    <p class="mb-5 text-muted">This is your dashboard. Choose a category to get started:</p>
+
+    <div class="row justify-content-center g-4">
+        <!-- Expense Tracker -->
+        <div class="col-lg-4 col-md-6 col-sm-10" data-aos="fade-up">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="{{ url_for('static', filename='images/expense.png') }}" class="card-img-top" alt="Expense Tracker Image">
+                <div class="card-body">
+                    <h5 class="card-title">💰 Expense Tracker</h5>
+                    <p class="card-text">Track your daily expenses, set budgets, and view reports.</p>
+                    <a href="{{ url_for('expenses') }}" class="btn btn-outline-primary">Go to Expenses</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personal Diary -->
+        <div class="col-lg-4 col-md-6 col-sm-10" data-aos="fade-up" data-aos-delay="100">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="{{ url_for('static', filename='images/diary.png') }}" class="card-img-top" alt="Diary Image">
+                <div class="card-body">
+                    <h5 class="card-title">📘 Personal Diary</h5>
+                    <p class="card-text">Write down your thoughts, reflections, and daily experiences.</p>
+                    <a href="{{ url_for('diary') }}" class="btn btn-outline-secondary">Go to Diary</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Weather Forecast -->
+        <div class="col-lg-4 col-md-6 col-sm-10" data-aos="fade-up" data-aos-delay="200">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="{{ url_for('static', filename='images/weather.png') }}" class="card-img-top" alt="Weather Image">
+                <div class="card-body">
+                    <h5 class="card-title">🌦️ Weather Forecast</h5>
+                    <p class="card-text">Check real-time weather updates for your location or city.</p>
+                    <a href="{{ url_for('weather') }}" class="btn btn-outline-success">Check Weather</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

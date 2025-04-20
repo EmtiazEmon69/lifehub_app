@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <h2 class="mb-4 text-center">My Personal Diary</h2>
+
+    <form method="post" class="card p-4 shadow-sm mb-4">
+        <textarea name="entry" class="form-control mb-3" rows="4" placeholder="Write your thoughts..." required></textarea>
+        <button type="submit" class="btn btn-primary w-100">Save Entry</button>
+    </form>
+
+    <h4 class="mb-3">Previous Entries</h4>
+    {% for e in entries %}
+    <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+            <h6 class="card-subtitle text-muted">{{ e['date'] }}</h6>
+            <p class="card-text mt-2">{{ e['entry'] }}</p>
+        </div>
+    </div>
+    {% else %}
+    <p class="text-muted text-center">No entries yet.</p>
+    {% endfor %}
+</div>
+{% endblock %}
